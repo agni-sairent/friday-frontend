@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="158" height="76" viewBox="0 0 158 76">
+  <g id="Group_23" data-name="Group 23" transform="translate(-137 -670.943)">
+    <text id="ag._yper" data-name="ag.   yper" transform="translate(137 721.943)" fill="#e6e6e6" font-size="33" font-family="Montserrat-Bold, Montserrat" font-weight="700"><tspan x="0" y="0" xml:space="preserve">ag.   yper</tspan></text>
+    <rect id="Rectangle_4" data-name="Rectangle 4" width="22" height="6" transform="translate(192 705.943)" fill="#e12ba6"/>
+    <g id="Group_4" data-name="Group 4" transform="translate(191.061 671)">
+      <path id="Path_12" data-name="Path 12" d="M0,0H5.823V62.649H0Z" transform="translate(0.395 6.711)" fill="#e12ba6"/>
+      <path id="Polygon_1" data-name="Polygon 1" d="M7,0l7,7H0Z" transform="translate(-0.061 13.943) rotate(-90)" fill="#0d121e"/>
+      <path id="Path_24" data-name="Path 24" d="M6.5,0,13,7H0Z" transform="translate(-0.061 75.943) rotate(-90)" fill="#0d121e"/>
+    </g>
+    <g id="Group_5" data-name="Group 5" transform="translate(209.082 682.584)">
+      <path id="Path_12-2" data-name="Path 12" d="M0,0H5.823V39.156H0Z" transform="translate(0.2 6.873)" fill="#e12ba6"/>
+      <path id="Path_23" data-name="Path 23" d="M8,0l8,8H0Z" transform="translate(-1.082 14.359) rotate(-90)" fill="#0d121e"/>
+      <path id="Polygon_2" data-name="Polygon 2" d="M6,0l6,7H0Z" transform="translate(-0.082 52.359) rotate(-90)" fill="#0d121e"/>
+    </g>
+  </g>
+</svg>

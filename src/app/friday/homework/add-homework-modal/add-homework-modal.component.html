@@ -1,0 +1,20 @@
+<div class="modal-toggle" (click)="toggleModal()"><img src="assets/icon-add.svg"></div>
+
+<div class="modal" [ngClass]="isModalActive ? 'is-active' : ''">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+      <h2 class="modal-card-title">New Homework 📑</h2>
+      <input type="text" placeholder="Title" #homeworkTitle>
+      <div class="control">
+        <textarea class="textarea has-fixed-size" placeholder="Your new Homework..." #homeworkText></textarea>
+      </div>
+      <h3>Deadline (optional)</h3>
+      <input type="datetime-local" #homeworkDeadline>
+      <div class="modal-footer has-text-right">
+        <button class="button is-success" (click)="submitHomeworkForm()">Create</button>
+        <button class="button is-error" (click)="toggleModal()">Cancel</button>
+      </div>
+    </section>
+  </div>
+</div>

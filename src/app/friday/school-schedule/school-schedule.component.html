@@ -1,0 +1,17 @@
+<div class="box exercise-bg">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <div class="header">
+          {{subject.short | slice:0:6}}<span class="header-room"> - {{subject.room}}</span>
+        </div>
+        <div class="subject">
+          {{subject.name | slice:0:20 }}{{subject.name.length >= 20 ? '...' : ''}}
+        </div>
+        <div class="hours">
+          {{subject.time_start | slice:0:5}} - {{subject.time_end | slice:0:5}}
+        </div>
+      </div>
+    </div>
+  </article>
+</div>

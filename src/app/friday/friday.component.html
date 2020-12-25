@@ -1,0 +1,60 @@
+<div class="columns is-gapless">
+  <div class="column is-2">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="column">
+    <div class="columns">
+      <div class="column headline-column">
+        <div class="headline">School 🎓<span class="time">today</span></div>
+        <app-add-subject-modal></app-add-subject-modal>
+      </div>
+      <div class="column headline-column">
+        <nav class="level">
+            <div class="level-left">
+              <div class="level-item">
+                <div class="headline">Homework 📑</div>
+              </div>
+            </div>
+            <div class="level-right">
+              <div class="level-item">
+                <div class="modal-toggle">
+                  <app-add-homework-modal (newHomework)="refreshHomeworks()"></app-add-homework-modal>
+                </div>
+              </div>
+            </div>
+        </nav>
+      </div>
+      <div class="column headline-column">
+        <div class="headline">Work 👔<span class="time">no work today!</span></div>
+        <app-add-workday-modal></app-add-workday-modal>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="columns is-multiline">
+          <div class="column is-half" *ngFor="let subject of subjects;">
+            <app-school-schedule [subject]="subject"></app-school-schedule>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div *ngFor="let homework of displayedHomeworks;">
+          <app-homework [homework]="homework"></app-homework>
+        </div>
+        <div class="list-pagination columns">
+          <div class="column is-half has-text-left">
+            <a class="pagination-previous" (click)="paginateHomeworks(homeworksPagination.page - 1)" *ngIf="homeworksPagination.canGoPrevious">Previous</a>
+          </div>
+          <div class="column has-text-right">
+            <a class="pagination-next" (click)="paginateHomeworks(homeworksPagination.page + 1)" *ngIf="homeworksPagination.canGoNext">Next page</a>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div *ngFor="let workday of workdays;">
+          <app-work [workday]="workday"></app-work>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
