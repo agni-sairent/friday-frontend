@@ -1,16 +1,52 @@
-<div class="modal">
+<div class="modal-toggle" (click)="toggleModal()"><img src="assets/icon-add.svg"></div>
+<div class="modal" [ngClass]="isModalActive ? 'is-active' : ''">
   <div class="modal-background"></div>
   <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Modal title</p>
-      <button class="delete" aria-label="close"></button>
-    </header>
     <section class="modal-card-body">
-      <!-- Content ... -->
+      <h2 class="modal-card-title">Schooldays</h2>
+      <app-weekday-picker></app-weekday-picker>
+      <div class="columns">
+        <div class="column is-one-third">
+          <div class="day-hours">
+            <div class="day-hour">
+              <div class="day-hour-time">6:00</div>
+              <div class="day-hour-subject">PIN @ E340</div>
+            </div>
+            <div class="day-hour">
+              <div class="day-hour-time">6:00</div>
+              <div class="day-hour-subject">PIN @ E340</div>
+            </div>
+            <div class="day-hour">
+              <div class="day-hour-time">6:00</div>
+              <div class="day-hour-subject">PIN @ E340</div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="columns">
+            <div class="column">
+              <div class="element">
+                <h3>Subject name</h3>
+                <input type="text">
+              </div>
+              <div class="element">
+                <h3>Weekday</h3>
+                <app-weekday-picker></app-weekday-picker>
+              </div>
+              <div class="element">
+                <h3>Type</h3>
+                <app-weekday-picker></app-weekday-picker>
+              </div>
+            </div>
+            <div class="column is-three-fifths">
+              <div class="element">
+                <h3>Subject short</h3>
+                <input type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <footer class="modal-card-foot">
-      <button class="button is-success">Save changes</button>
-      <button class="button">Cancel</button>
-    </footer>
   </div>
 </div>

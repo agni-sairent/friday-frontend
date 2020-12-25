@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Homework} from '../models/Homework';
+import {ClientService} from '../client.service';
 
 @Component({
   selector: 'app-homework',
@@ -8,10 +9,18 @@ import {Homework} from '../models/Homework';
 })
 export class HomeworkComponent implements OnInit {
   @Input() homework: Homework;
+  @Output() delete: EventEmitter<Homework> = new EventEmitter();
 
-  constructor() { }
+  constructor(private client: ClientService) { }
 
   ngOnInit(): void {
   }
 
+  finishHomework(): void{
+    this.client.removeWorkday(this.homework.id).subscribe(resp => {
+      if (resp.status === 200){
+        this.delete.emit(this.homework);
+      }
+    });
+  }
 }

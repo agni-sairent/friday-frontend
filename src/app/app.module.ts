@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { AddSubjectModalComponent } from './friday/school-schedule/add-subject-modal/add-subject-modal.component';
 import { AddHomeworkModalComponent } from './friday/homework/add-homework-modal/add-homework-modal.component';
 import { AddWorkdayModalComponent } from './friday/work/add-workday-modal/add-workday-modal.component';
+import { WeekdayPickerComponent } from './weekday-picker/weekday-picker.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AddWorkdayModalComponent } from './friday/work/add-workday-modal/add-wo
     AddSubjectModalComponent,
     AddHomeworkModalComponent,
     AddWorkdayModalComponent,
+    WeekdayPickerComponent,
   ],
   imports: [
     BrowserModule,

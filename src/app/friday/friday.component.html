@@ -5,8 +5,20 @@
   <div class="column">
     <div class="columns">
       <div class="column headline-column">
-        <div class="headline">School 🎓<span class="time">today</span></div>
-        <app-add-subject-modal></app-add-subject-modal>
+        <nav class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <div class="headline">School 🎓<span class="time">today</span></div>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <div class="modal-toggle">
+                <app-add-subject-modal></app-add-subject-modal>
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
       <div class="column headline-column">
         <nav class="level">
@@ -25,8 +37,20 @@
         </nav>
       </div>
       <div class="column headline-column">
-        <div class="headline">Work 👔<span class="time">no work today!</span></div>
-        <app-add-workday-modal></app-add-workday-modal>
+        <nav class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <div class="headline">Work 👔<span class="time">no work today!</span></div>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <div class="modal-toggle">
+                <app-add-workday-modal></app-add-workday-modal>
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
     </div>
     <div class="columns">
@@ -39,7 +63,7 @@
       </div>
       <div class="column">
         <div *ngFor="let homework of displayedHomeworks;">
-          <app-homework [homework]="homework"></app-homework>
+          <app-homework [homework]="homework" (delete)="homeworkRemovedEvent($event)"></app-homework>
         </div>
         <div class="list-pagination columns">
           <div class="column is-half has-text-left">

@@ -70,4 +70,9 @@ export class FridayComponent implements OnInit {
       }
     });
   }
+
+  homeworkRemovedEvent(homework: Homework): void{
+    this.homeworks = this.homeworks.filter(item => item !== homework);
+    this.paginateHomeworks();
+  }
 }

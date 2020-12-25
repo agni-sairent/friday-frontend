@@ -46,11 +46,15 @@ export class ClientService {
   }
 
   getWork(): Observable<WorkResponse> {
-    return this.http.get<WorkResponse>(this.FRIDAY_SERVICE_URL + 'work/', {params: {token: this.AUTH_TOKEN}});
+    return this.http.get<WorkResponse>(this.FRIDAY_SERVICE_URL + 'workday/list/', {params: {token: this.AUTH_TOKEN}});
   }
 
   createWorkday(workday: Workday): Observable<any>{
     return this.http.post(this.FRIDAY_SERVICE_URL + 'workday/create/', {...workday, token: this.AUTH_TOKEN});
+  }
+
+  removeWorkday(id: number): Observable<any> {
+    return this.http.delete(this.FRIDAY_SERVICE_URL + 'workday/' + id.toString() + '/', {params: {token: this.AUTH_TOKEN}});
   }
 
   validateUserAuthToken(authToken: string): Observable<AuthValidateResponse>{
