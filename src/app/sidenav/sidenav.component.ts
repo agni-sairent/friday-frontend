@@ -1,5 +1,5 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {ClientService} from '../friday/client.service';
+import {ClientService} from '../_helpers/client.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -12,4 +12,7 @@ export class SidenavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handleLogout(): void{
+    this.client.logout();
+  }
 }

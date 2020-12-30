@@ -1,5 +1,4 @@
-<div class="modal-toggle" (click)="toggleModal()"><img src="assets/icon-add.svg"></div>
-
+<div class="modal-toggle" (click)="toggleModal()"><img src="assets/icon_add_dark.svg"></div>
 <div class="modal" [ngClass]="isModalActive ? 'is-active' : ''">
   <div class="modal-background"></div>
   <div class="modal-card">
@@ -8,26 +7,11 @@
       <h3>Work Topic</h3>
       <input class="form-item" type="text" placeholder="Implement request #42.." #workdayTopic>
       <h3>Workday (day of week)</h3>
-      <div class="day-of-week-radio-picker form-item">
-        <div class="weekday" (click)="changeSelectedDay(1)"
-             [ngClass]="selectedWorkday == 1 ? 'weekday-selected' : ''">Po</div>
-        <div class="weekday" (click)="changeSelectedDay(2)"
-             [ngClass]="selectedWorkday == 2 ? 'weekday-selected' : ''">Út</div>
-        <div class="weekday" (click)="changeSelectedDay(3)"
-             [ngClass]="selectedWorkday == 3 ? 'weekday-selected' : ''">St</div>
-        <div class="weekday" (click)="changeSelectedDay(4)"
-             [ngClass]="selectedWorkday == 4 ? 'weekday-selected' : ''">Čt</div>
-        <div class="weekday" (click)="changeSelectedDay(5)"
-             [ngClass]="selectedWorkday == 5 ? 'weekday-selected' : ''">Pá</div>
-        <div class="weekday" (click)="changeSelectedDay(6)"
-             [ngClass]="selectedWorkday == 6 ? 'weekday-selected' : ''">So</div>
-        <div class="weekday" (click)="changeSelectedDay(7)"
-             [ngClass]="selectedWorkday == 7 ? 'weekday-selected' : ''">Ne</div>
-      </div>
+      <input class="form-item" type="date" #workdayDay>
       <h3>Since</h3>
-      <input class="form-item" type="date" placeholder="Topic" #workdayUntil>
+      <input class="form-item" type="time" placeholder="Topic" #workdayUntil>
       <h3>Until</h3>
-      <input class="form-item" type="date" placeholder="Topic" #workdaySince>
+      <input class="form-item" type="time" placeholder="Topic" #workdaySince>
       <div class="modal-footer has-text-right">
         <button class="button is-success" (click)="submitWorkdayForm()">Create</button>
         <button class="button is-error" (click)="toggleModal()">Cancel</button>

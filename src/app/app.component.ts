@@ -1,5 +1,5 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import {ClientService} from './friday/client.service';
+import {ClientService} from './_helpers/client.service';
 import {Router} from '@angular/router';
 
 @Component({

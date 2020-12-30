@@ -1,7 +1,7 @@
 import {Time} from '@angular/common';
 
 export interface SchoolSubject{
-  id: number;
+  id?: number;
   short: string;
   name: string;
   room: string;

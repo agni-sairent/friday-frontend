@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Homework} from '../models/Homework';
-import {ClientService} from '../client.service';
+import {ClientService} from '../../_helpers/client.service';
 
 @Component({
   selector: 'app-homework',
@@ -17,7 +17,7 @@ export class HomeworkComponent implements OnInit {
   }
 
   finishHomework(): void{
-    this.client.removeWorkday(this.homework.id).subscribe(resp => {
+    this.client.removeHomework(this.homework.id).subscribe(resp => {
       if (resp.status === 200){
         this.delete.emit(this.homework);
       }

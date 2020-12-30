@@ -14,6 +14,10 @@ import { AddSubjectModalComponent } from './friday/school-schedule/add-subject-m
 import { AddHomeworkModalComponent } from './friday/homework/add-homework-modal/add-homework-modal.component';
 import { AddWorkdayModalComponent } from './friday/work/add-workday-modal/add-workday-modal.component';
 import { WeekdayPickerComponent } from './weekday-picker/weekday-picker.component';
+import {NgbTimepickerModule} from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule} from '@angular/forms';
+import {ReplacePipe} from './_helpers/replace.pipe';
+import {DayMonthReversePipe } from './_helpers/reverse.pipe';
 
 @NgModule({
   declarations: [
@@ -28,11 +32,15 @@ import { WeekdayPickerComponent } from './weekday-picker/weekday-picker.componen
     AddHomeworkModalComponent,
     AddWorkdayModalComponent,
     WeekdayPickerComponent,
+    ReplacePipe,
+    DayMonthReversePipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbTimepickerModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

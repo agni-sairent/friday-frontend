@@ -1,11 +1,11 @@
-<div class="box pink-bg">
+<div class="box blue-bg">
   <article class="media">
     <div class="media-content">
       <div class="content">
-        <div class="when">Next workday is 06.10.2020</div>
-        <div class="what">CSIRT-MU Orion</div>
+        <div class="when">Next workday is {{workday.workday | slice: -5 | replace: '-' : '.' | dayMonthFlip}}</div>
+        <div class="what">{{workday.topic}}</div>
         <div class="time">
-          9:30 - 16:00
+          {{workday.since | slice:0:5}} - {{workday.until | slice:0:5}}
         </div>
       </div>
     </div>

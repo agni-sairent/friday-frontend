@@ -1,5 +1,5 @@
 import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
-import {ClientService} from '../../client.service';
+import {ClientService} from '../../../_helpers/client.service';
 
 @Component({
   selector: 'app-add-homework-modal',

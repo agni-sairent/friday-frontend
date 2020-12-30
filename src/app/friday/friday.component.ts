@@ -1,8 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ClientService} from './client.service';
+import {ClientService} from '../_helpers/client.service';
 import {SchoolSubject} from './models/SchoolSubject';
 import {Homework} from './models/Homework';
 import {Work} from './models/Work';
+import {CustomTimeUtils} from '../_helpers/CustomTimeUtils';
 
 @Component({
   selector: 'app-friday',
@@ -26,8 +27,7 @@ export class FridayComponent implements OnInit {
   }
 
   refreshSubjects(): void{
-    this.client.getSchoolSchedule().subscribe(subjectResponse => {
-      console.log(subjectResponse);
+    this.client.getSchoolScheduleForWeekday(CustomTimeUtils.getASWeekdayNumber()).subscribe(subjectResponse => {
       if (subjectResponse.status === 200) {
         this.subjects = subjectResponse.subjects;
       }
@@ -39,7 +39,6 @@ export class FridayComponent implements OnInit {
       if (homeworkResponse.status === 200) {
         this.homeworks = homeworkResponse.homeworks;
         this.paginateHomeworks();
-        console.log(homeworkResponse);
       }
     });
   }
@@ -66,7 +65,7 @@ export class FridayComponent implements OnInit {
   refreshWork(): void{
     this.client.getWork().subscribe(workResponse => {
       if (workResponse.status === 200) {
-        this.workdays = workResponse.work;
+        this.workdays = workResponse.workdays;
       }
     });
   }

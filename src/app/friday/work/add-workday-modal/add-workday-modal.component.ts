@@ -1,5 +1,5 @@
 import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
-import {ClientService} from '../../client.service';
+import {ClientService} from '../../../_helpers/client.service';
 
 @Component({
   selector: 'app-add-workday-modal',
@@ -8,10 +8,10 @@ import {ClientService} from '../../client.service';
 })
 export class AddWorkdayModalComponent implements OnInit {
   @ViewChild('workdayTopic') workdayTopic: ElementRef;
+  @ViewChild('workdayDay') workdayDay: ElementRef;
   @ViewChild('workdaySince') workdaySince: ElementRef;
   @ViewChild('workdayUntil') workdayUntil: ElementRef;
   @Output() newWorkday: EventEmitter<any> = new EventEmitter();
-  selectedWorkday = NaN;
   isModalActive = false;
 
   constructor(private client: ClientService) { }
@@ -20,7 +20,7 @@ export class AddWorkdayModalComponent implements OnInit {
   }
 
   submitWorkdayForm(): void{
-    const workday = {topic: this.workdayTopic.nativeElement.value, workday: this.selectedWorkday,
+    const workday = {topic: this.workdayTopic.nativeElement.value, workday: this.workdayDay.nativeElement.value,
       since: this.workdaySince.nativeElement.value, until: this.workdayUntil.nativeElement.value,
       user_reference: this.client.currentUser.for};
     this.client.createWorkday(workday).subscribe(resp => {
@@ -31,12 +31,7 @@ export class AddWorkdayModalComponent implements OnInit {
     });
   }
 
-  changeSelectedDay(weekday: number): void{
-    this.selectedWorkday = weekday;
-  }
-
   toggleModal(): void{
-    this.selectedWorkday = NaN;
     this.isModalActive = !this.isModalActive;
   }
 }
