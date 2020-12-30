@@ -14,7 +14,7 @@
           <div class="level-right">
             <div class="level-item">
               <div class="modal-toggle">
-                <app-add-subject-modal [subjects]="subjects"></app-add-subject-modal>
+                <app-add-subject-modal [subjects]="subjects" (newSubject)="refreshSubjects()"></app-add-subject-modal>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@
           <div class="level-right">
             <div class="level-item">
               <div class="modal-toggle">
-                <app-add-workday-modal></app-add-workday-modal>
+                <app-add-workday-modal (newWorkday)="refreshWork()"></app-add-workday-modal>
               </div>
             </div>
           </div>

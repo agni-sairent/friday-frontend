@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {SchoolSubject} from '../../models/SchoolSubject';
 import {CustomTimeUtils} from '../../../_helpers/CustomTimeUtils';
 import {ClientService} from '../../../_helpers/client.service';
@@ -17,7 +17,7 @@ export class AddSubjectModalComponent implements OnInit {
   @ViewChild('subjectStart') start: ElementRef;
   @ViewChild('subjectDurationHours') durationHours: ElementRef;
   @ViewChild('subjectDurationMinutes') durationMinutes: ElementRef;
-
+  @Output() newSubject: EventEmitter<any> = new EventEmitter();
   @Input() subjects: SchoolSubject[];
   time = {hour: 13, minute: 30};
   selectedType = 'LR';
@@ -65,6 +65,7 @@ export class AddSubjectModalComponent implements OnInit {
       if (resp.status === 201){
         this.clearSubject();
         this.updateSubjects();
+        this.newSubject.emit();
       }
     });
   }

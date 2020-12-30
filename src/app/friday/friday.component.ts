@@ -44,6 +44,10 @@ export class FridayComponent implements OnInit {
   }
 
   paginateHomeworks(pageNumber= 1): void{
+    if (this.homeworks.length === 0) {
+      this.displayedHomeworks = [];
+    }
+
     if (pageNumber < 1){
       return;
     }

@@ -20,8 +20,8 @@ export class ClientService {
 
   constructor(private http: HttpClient,
               private router: Router) { }
-  private AUTH_SERVICE_URL = 'http://localhost:8000/';
-  private FRIDAY_SERVICE_URL = 'http://localhost:8001/';
+  private AUTH_SERVICE_URL = 'http://localhost:10875/heimdall/api/';
+  private FRIDAY_SERVICE_URL = 'http://localhost:10875/friday/api/';
   currentUser: UserValidation;
   AUTH_TOKEN: string;
 
