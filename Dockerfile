@@ -10,7 +10,7 @@ RUN npm install
 
 COPY . /src
 # For local builds
-#CMD ["/src/node_modules/.bin/ng", "build", "--output-path", "build", "--base-href", "GW_FRONTEND_BASE_PATH"]
+#CMD ["/src/node_modules/.bin/ng", "build", "--output-path", "build", "--base-href", "FRIDAY_FRONTEND_BASE_PATH"]
 
 # Production - no debug and uses production environment.prod.ts config
-CMD ["/src/node_modules/.bin/ng", "build", "--prod", "--output-path", "build", "--base-href", "GW_FRONTEND_BASE_PATH"]
+CMD ["/src/node_modules/.bin/ng", "build", "--prod", "--output-path", "build", "--base-href", "FRIDAY_FRONTEND_BASE_PATH"]
